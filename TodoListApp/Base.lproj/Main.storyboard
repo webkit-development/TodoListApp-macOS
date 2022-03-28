@@ -744,7 +744,7 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNa-tK-Pdr">
-                                                                    <rect key="frame" x="0.0" y="4" width="114" height="16"/>
+                                                                    <rect key="frame" x="8" y="24" width="114" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="sB4-gc-eqM">
                                                                         <font key="font" usesAppearanceFont="YES"/>
@@ -792,11 +792,15 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="PFG-j6-ReC"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="WSz-Wt-Sba"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="wh4-be-kWL">
-                                    <rect key="frame" x="1" y="118" width="238" height="16"/>
+                                    <rect key="frame" x="1" y="483" width="348" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZUm-4Y-Pha">
@@ -824,7 +828,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flX-jS-Efo">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="flX-jS-Efo">
                                 <rect key="frame" x="358" y="288" width="372" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Enter you todo item..." drawsBackground="YES" id="iQf-HE-KNW">
                                     <font key="font" metaFont="system"/>
@@ -839,10 +843,13 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <color key="bezelColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="submitClicked:" target="XfG-lQ-9wD" id="HGM-6m-QMS"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n5m-Op-gEW">
                                 <rect key="frame" x="362" y="241" width="96" height="18"/>
-                                <buttonCell key="cell" type="check" title="Important" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1JJ-fz-FSl">
+                                <buttonCell key="cell" type="check" title="Important" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1JJ-fz-FSl">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -852,6 +859,7 @@
                             <constraint firstItem="8uV-2b-wPZ" firstAttribute="top" secondItem="flX-jS-Efo" secondAttribute="bottom" constant="28" id="0Ko-f1-2MT"/>
                             <constraint firstAttribute="trailing" secondItem="8Gg-9R-4ei" secondAttribute="trailing" constant="400" id="0tk-ed-qHs"/>
                             <constraint firstAttribute="bottom" secondItem="8Gg-9R-4ei" secondAttribute="bottom" id="1dC-MP-QnC"/>
+                            <constraint firstItem="flX-jS-Efo" firstAttribute="leading" secondItem="8Gg-9R-4ei" secondAttribute="trailing" constant="8" symbolic="YES" id="BRx-lO-FAs"/>
                             <constraint firstAttribute="trailing" secondItem="5Iv-kl-Qqs" secondAttribute="trailing" constant="539" id="CJC-LW-l9t"/>
                             <constraint firstItem="YzX-Hj-frC" firstAttribute="leading" secondItem="8Gg-9R-4ei" secondAttribute="trailing" constant="156" id="D7d-Ui-Bk1"/>
                             <constraint firstItem="flX-jS-Efo" firstAttribute="top" secondItem="YzX-Hj-frC" secondAttribute="bottom" constant="17" id="Efn-Oq-sRg"/>
@@ -863,11 +871,16 @@
                             <constraint firstAttribute="trailing" secondItem="8uV-2b-wPZ" secondAttribute="trailing" constant="175" id="coa-Tz-V5u"/>
                             <constraint firstItem="8Gg-9R-4ei" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="fs4-aF-Nmv"/>
                             <constraint firstAttribute="trailing" secondItem="YzX-Hj-frC" secondAttribute="trailing" constant="156" id="hXQ-W4-3yg"/>
+                            <constraint firstAttribute="trailing" secondItem="flX-jS-Efo" secondAttribute="trailing" constant="20" symbolic="YES" id="isv-2c-x0a"/>
                             <constraint firstItem="5Iv-kl-Qqs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="139" id="lQj-aA-aFS"/>
                             <constraint firstItem="n5m-Op-gEW" firstAttribute="leading" secondItem="8Gg-9R-4ei" secondAttribute="trailing" constant="14" id="pid-ac-d10"/>
                             <constraint firstItem="8Gg-9R-4ei" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="qBZ-tf-UQs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="importantCheckBox" destination="n5m-Op-gEW" id="vj5-WZ-VeL"/>
+                        <outlet property="textField" destination="flX-jS-Efo" id="Jwo-b0-yQR"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
